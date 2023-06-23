@@ -1,3 +1,30 @@
+#content-input {
+  margin: 1em
+}
+
+.the-form {
+  display: flex;
+  flex-direction: column
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+}
+
+.one-note {
+  margin: 0.25em
+}
+
+.notes-main {
+  display: flex;
+  justify-content: space-between;
+  height: 75vh;
+  width: 90vw;
+}
+
 main#root {
   background-color: #282c34;
   min-height: 100vh;
