@@ -12,8 +12,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "PORT=6001 react-scripts start",
-    "server": "json-server --port 6000 --watch db.json",
+    "start": "PORT=4001 react-scripts start",
+    "server": "json-server --port 4000 --watch db.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
