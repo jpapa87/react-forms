@@ -1,10 +1,10 @@
-import SingleNote from './SingleNote'
+// import SingleNote from './SingleNote'
  
 
 function NotesContainer() {
   return (
     <div>
-      <SingleNote content="one note" />
+      { /* all the notes go here! */ }
     </div>
   )
 }
