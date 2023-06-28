@@ -5,7 +5,11 @@ import { useEffect, useState } from 'react';
 
 function App() {
   const [ notes, setNotes]= useState([])
+
   const [search, setSearch]= useState ("")
+  const filterNotes = notes.filter((note)=> {
+    return note.content.includes(search)
+  })
   useEffect(()=> {
     fetch ("http://localhost:4000/notes")
     .then( r => r.json())
@@ -16,7 +20,7 @@ function App() {
       <h1>all the notes!</h1>
       <SearchNotes search={search} setSearch={setSearch} />
       <div className="notes-main">
-        <NotesContainer notes= {notes} search={search}/>
+        <NotesContainer notes= {filterNotes} />
         <NewNoteForm setNotes={setNotes} notes= {notes}/>
       </div>
     </div>

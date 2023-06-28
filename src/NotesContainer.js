@@ -1,11 +1,8 @@
 import SingleNote from './SingleNote'
  
-function NotesContainer({notes, search}) {
-  const filterNotes = notes.filter((note)=> {
-    return note.content.includes(search)
-  })
+function NotesContainer({notes}) {
   // console.log(filterNotes)
-  const allNotes= filterNotes.map((note) => {
+  const allNotes= notes.map((note) => {
     return (
       <SingleNote 
       key= {note.id}
