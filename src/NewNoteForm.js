@@ -9,15 +9,19 @@ function NewNoteForm({setNotes, notes}) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    fetch("http://localhost:4000/notes", {
-      method: "POST"
-      header: {}
-    })
-
-    const myNewNote= {
+      const myNewNote= {
       content : newNote
     }
-    setNotes ([...notes, myNewNote ])
+    // console.log(myNewNote)
+    fetch("http://localhost:4000/notes", {
+      method: "POST",
+      headers: {"Content-Type" : "application/json"},
+      body: JSON.stringify (myNewNote)
+    })
+      .then(r => r.json())
+      .then(newServerNote => setNotes([...notes, newServerNote]))
+     // setNotes ([...notes, myNewNote ])
+
   }
   return (
     <div className="form-container">

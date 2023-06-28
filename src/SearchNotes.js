@@ -1,9 +1,12 @@
 
 
-function SearchNotes() {
+function SearchNotes({search, setSearch}) {
+    function handleSearch(e){
+        setSearch(e.target.value)
+    }
     return (
         <div>
-            search: <input />
+            search: <input onChange={handleSearch} value={search}/>
         </div>
     )
 }
