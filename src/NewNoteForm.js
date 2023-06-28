@@ -1,11 +1,31 @@
+import { useState } from "react"
 
+function NewNoteForm({setNotes, notes}) {
+  const [newNote, setNewNote]= useState ("")
 
-function NewNoteForm() {
+  function handleSearch(e) {
+    setNewNote(e.target.value)
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    fetch("http://localhost:4000/notes", {
+      method: "POST"
+      header: {}
+    })
+
+    const myNewNote= {
+      content : newNote
+    }
+    setNotes ([...notes, myNewNote ])
+  }
   return (
     <div className="form-container">
-      <form className="the-form">
+      <form onSubmit= {handleSubmit} className="the-form">
         <label id="content-input">
-          content: <input type="text" name="content"/>
+          content: <input onChange= {handleSearch} 
+          type="text" 
+          name="content"/>
         </label>
         <input type="submit" value="add new note"/>
       </form>

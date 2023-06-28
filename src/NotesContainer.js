@@ -1,9 +1,20 @@
-// import SingleNote from './SingleNote'
+import SingleNote from './SingleNote'
  
-function NotesContainer() {
+function NotesContainer({notes}) {
+  // console.log(notes)
+  const allNotes= notes.map((note) => {
+    return (
+      <SingleNote 
+      key= {note.id}
+      id= {note.id}
+      content= {note.content}
+      />
+    
+    )
+  })
   return (
     <div>
-      { /* all the notes go here! */ }
+      {allNotes}
     </div>
   )
 }
